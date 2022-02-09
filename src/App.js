@@ -13,7 +13,7 @@ function App() {
       <Name />
       <Birthday />
       <Contact />
-      <StyledComponents />
+      {/* <StyledComponents /> */}
     </div>
   );
 }
