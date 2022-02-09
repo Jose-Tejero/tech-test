@@ -23,7 +23,7 @@ const Birthday = () => {
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        gap: 10px
+        gap: 10px;
     `;
 
     return (
@@ -32,12 +32,9 @@ const Birthday = () => {
             <Form>
                 <h3>¿Cuál es tu fecha de nacimiento?</h3>
                 <FormBox>
-                    <select name="">
-                        <option value="">Día</option>
-                    </select>
                     <input type="number" pattern='[0-9]{2}' required placeholder='Día' />
                     <input type="number" placeholder='Mes' />
-                    <input type="number" placeholder='Año' />
+                    <input type="number" pattern='[0-9]{4}' placeholder='Año' />
                 </FormBox>
             </Form>
         </FormBody>

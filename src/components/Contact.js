@@ -23,7 +23,7 @@ const Contact = () => {
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        gap: 10px
+        gap: 10px;
     `;
 
     return (
@@ -32,8 +32,8 @@ const Contact = () => {
             <Form>
                 <h3>Datos de contacto</h3>
                 <FormBox>
-                    <input type="text" placeholder='Correo electrónico' />
-                    <input type="text" placeholder='Teléfono celular' />
+                    <input type="email" placeholder='Correo electrónico' />
+                    <input type="tel" placeholder='Teléfono celular' />
                 </FormBox>
             </Form>
         </FormBody>

@@ -16,14 +16,14 @@ const Name = () => {
         flex-direction: column;
         text-align: left;
         margin: 0 7px;
-        padding: 10px;
+        padding: 5px;
     `,
     FormBox = styled.form `
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        gap: 15px;
+        gap: 10px;
     `;
 
     return (
@@ -32,9 +32,9 @@ const Name = () => {
             <Form>
                 <h3>¿Cuál es tu nombre?</h3>
                 <FormBox>
-                    <input type="text" placeholder='Nombre' />
+                    <input type="text" placeholder='Nombre' required/>
                     <input type="text" placeholder='Segundo nombre' />
-                    <input type="text" placeholder='Apellido paterno' />
+                    <input type="text" placeholder='Apellido paterno' required/>
                     <input type="text" placeholder='Apellido materno' />
                 </FormBox>
             </Form>

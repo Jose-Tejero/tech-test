@@ -3,11 +3,25 @@ import Birthday from './components/Birthday';
 import Header from './components/Header';
 import Name from './components/Name';
 import Contact from './components/Contact';
-import { createGlobalStyle } from 'styled-components';
+import { keyframes, createGlobalStyle } from 'styled-components';
 
 function App() {
+  
+  const fadeIn = keyframes `
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  `;
 
   const GlobalStyle = createGlobalStyle `
+
+    * {
+      animation: ${fadeIn} 0.5s ease-out ;
+    }
+
     input {
       padding: 20px 10px;
       border: 3px solid #E0E0E0;
@@ -18,6 +32,10 @@ function App() {
 
     input::placeholder {
       color: #000;
+    }
+
+    input:focus {
+      outline-color: #F174DC;
     }
 
     h3 {

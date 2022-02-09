@@ -6,7 +6,7 @@ const Header = () => {
     const Header = styled.div `
         margin: 0;
         padding: 40px 10px;
-        background-color: #f174dc;
+        background-color: #F174DC;
         display: grid;
         grid-template-columns: 3fr 1fr;
     `,
