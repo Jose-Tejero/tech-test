@@ -6,8 +6,8 @@ const Header = () => {
     return (
         <HeaderApp>
             <FormTitle>Título de formulario</FormTitle>
-            <BigIcon><i class="fa-solid fa-clipboard-check"></i></BigIcon>
-            <Paragraph><i class="fa-solid fa-stopwatch"></i> En menos de 5 minutos.</Paragraph>
+            <BigIcon><i className="fa-solid fa-clipboard-check"></i></BigIcon>
+            <Paragraph><i className="fa-solid fa-stopwatch"></i> En menos de 5 minutos.</Paragraph>
         </HeaderApp>
     );
 };

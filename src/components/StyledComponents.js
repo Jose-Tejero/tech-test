@@ -1,4 +1,4 @@
-import styled, {css, keyframes, ThemeProvider, createGlobalStyle} from 'styled-components';
+import styled, {keyframes, createGlobalStyle} from 'styled-components';
 import adminImage from '../images/admin.jpg'
 
 export const FormBody = styled.div `
@@ -78,4 +78,40 @@ border-radius: 10px;
 position: absolute;
 bottom: -2.5px;
 right: -2.5px;
+`;
+  
+const fadeIn = keyframes `
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+`;
+
+export const GlobalStyle = createGlobalStyle `
+
+  * {
+    animation: ${fadeIn} 0.5s ease-out ;
+  }
+
+  input {
+    padding: 20px 10px;
+    border: 3px solid #E0E0E0;
+    background-color: #F0F0F0;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  input::placeholder {
+    color: #000;
+  }
+
+  input:focus {
+    outline-color: #F174DC;
+  }
+
+  h3 {
+    margin: 15px 10px;
+  }
 `;
