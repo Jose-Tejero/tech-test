@@ -14,8 +14,8 @@ const Contact = () => {
         background-color: #F0F0F0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        text-align: left;
+        padding: 5px;
     `,
     FormBox = styled.form `
         display: flex;
