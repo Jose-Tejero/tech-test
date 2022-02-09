@@ -1,4 +1,5 @@
 const INITIAL_STATE = {
+    complete: false,
     name: '',
     secondName: '',
     lastname: '',
@@ -12,6 +13,13 @@ const INITIAL_STATE = {
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
+
+        case 'SET_COMPLETE':
+            return {
+                ...state,
+                complete: action.payload
+            }
+
         case 'SET_NAME':
             return {
                 ...state,

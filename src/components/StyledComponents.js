@@ -88,6 +88,24 @@ export const Datas = styled.div `
     margin-left: auto;
     border-radius: 10px
 `;
+
+export const UserValidation = styled.div `
+    background-color: #F0F0F0;
+    width: 250px;
+    padding: 20px 10px;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+`;
+
+export const MainDatas = styled.div `
+    background-color: #F174DC;
+    width: 300px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+`;
   
 const fadeIn = keyframes `
   0% {
@@ -140,5 +158,9 @@ export const GlobalStyle = createGlobalStyle `
 
   div {
       background-color: #FAFAFA;
+  }
+
+  p {
+      margin: 8px 0;
   }
 `;
