@@ -16,7 +16,7 @@ const AdminPhoto = () => {
     `,
     Frame = styled.div `
         border: 1px solid #F174DC;
-        border-radius: 25px;
+        border-radius: 27px;
         width: 54px;
         height: 74px;
         margin: 0 auto;

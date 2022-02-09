@@ -15,6 +15,7 @@ const Birthday = () => {
         display: flex;
         flex-direction: column;
         text-align: left;
+        margin: 0 7px;
         padding: 5px;
     `,
     FormBox = styled.form `
@@ -22,7 +23,7 @@ const Birthday = () => {
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        gap: 5px
+        gap: 10px
     `;
 
     return (
@@ -31,9 +32,12 @@ const Birthday = () => {
             <Form>
                 <h3>¿Cuál es tu fecha de nacimiento?</h3>
                 <FormBox>
-                    <input type="text" placeholder='Día' />
-                    <input type="text" placeholder='Mes' />
-                    <input type="text" placeholder='Año' />
+                    <select name="">
+                        <option value="">Día</option>
+                    </select>
+                    <input type="number" pattern='[0-9]{2}' required placeholder='Día' />
+                    <input type="number" placeholder='Mes' />
+                    <input type="number" placeholder='Año' />
                 </FormBox>
             </Form>
         </FormBody>

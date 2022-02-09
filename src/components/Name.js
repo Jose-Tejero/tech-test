@@ -15,14 +15,15 @@ const Name = () => {
         display: flex;
         flex-direction: column;
         text-align: left;
-        padding: 5px;
+        margin: 0 7px;
+        padding: 10px;
     `,
     FormBox = styled.form `
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        gap: 5px
+        gap: 15px;
     `;
 
     return (

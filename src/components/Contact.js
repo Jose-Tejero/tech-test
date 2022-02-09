@@ -15,6 +15,7 @@ const Contact = () => {
         display: flex;
         flex-direction: column;
         text-align: left;
+        margin: 0 7px;
         padding: 5px;
     `,
     FormBox = styled.form `
@@ -22,7 +23,7 @@ const Contact = () => {
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        gap: 5px
+        gap: 10px
     `;
 
     return (
