@@ -8,7 +8,8 @@ const Name = () => {
     const dispatch = useDispatch();
     const { register, handleSubmit, reset } = useForm();
 
-    const submit = userName => {
+    const submit = (userName, e) => {
+        e.preventDefault();
         console.log(userName);
         dispatch({type: 'SET_NAME', payload: userName.name});
         dispatch({type: 'SET_SECONDNAME', payload: userName.secondName});
@@ -27,7 +28,7 @@ const Name = () => {
                     <input type="text" placeholder='Segundo nombre' {...register('secondName')}/>
                     <input type="text" placeholder='Apellido paterno' required {...register('lastname')}/>
                     <input type="text" placeholder='Apellido materno' {...register('secondLastName')}/>
-                    <button></button>
+                    <button>Enviar</button>
                 </Form>
             </FormContainer>
         </FormBody>

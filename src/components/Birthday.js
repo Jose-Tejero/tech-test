@@ -9,7 +9,8 @@ const Birthday = () => {
     const dispatch = useDispatch();
     const { register, handleSubmit, reset } = useForm();
 
-    const submit = userBirthday => {
+    const submit = (userBirthday, e) => {
+        e.preventDefault();
         console.log(userBirthday);
         dispatch({type: 'SET_DAY', payload: userBirthday.day});
         dispatch({type: 'SET_MONTH', payload: userBirthday.month});
@@ -18,7 +19,7 @@ const Birthday = () => {
     }
 
     let daysFor = [];
-    for (let i = 0; i < 31; i++) {
+    for (let i = 1; i < 32; i++) {
         daysFor.push(<option key={i} value={i} >{i}</option>)
     }
     
@@ -35,20 +36,20 @@ const Birthday = () => {
             <AdminPhoto />
             <FormContainer>
                 <h3>¿Cuál es tu fecha de nacimiento?</h3>
-                <Form >
+                <Form onSubmit={handleSubmit(submit)} >
                     <select defaultValue={'Día'} required {...register('day')} >
-                        <option value='Día' disabled={true} >Día</option>
+                        <option disabled={true} >Día</option>
                         {daysFor}
                     </select>
                     <select defaultValue={'Mes'} required {...register('month')} >
-                        <option value='Mes' disabled={true} >Mes</option>
+                        <option disabled={true} >Mes</option>
                         {monthsMap}
                     </select>
                     <select defaultValue={'Año'} required {...register('year')}>
-                        <option value='Año' disabled={true} >Año</option>
+                        <option disabled={true} >Año</option>
                         {yearsFor}
                     </select>
-                    <button onChange={handleSubmit(submit)} ></button>
+                    <button>Enviar</button>
                 </Form>
             </FormContainer>
         </FormBody>

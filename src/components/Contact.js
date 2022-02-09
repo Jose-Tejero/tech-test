@@ -24,7 +24,7 @@ const Contact = () => {
                 <Form onSubmit={handleSubmit(submit)} >
                     <input type="email" placeholder='Correo electrónico' required {...register('email')} />
                     <input type="tel" placeholder='Teléfono celular' required {...register('tel')} />
-                    <button></button>
+                    <button>Enviar</button>
                 </Form>
             </FormContainer>
         </FormBody>

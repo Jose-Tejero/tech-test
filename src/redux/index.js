@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     month: '',
     year: 0,
     email: '',
-    tel: 0
+    tel: 0,
 }
 
 const reducer = (state = INITIAL_STATE, action) => {

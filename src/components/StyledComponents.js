@@ -80,6 +80,14 @@ position: absolute;
 bottom: -2.5px;
 right: -2.5px;
 `;
+
+export const Datas = styled.div `
+    background-color: #F174DC;
+    width: 300px;
+    padding: 10px 10px;
+    margin-left: auto;
+    border-radius: 10px
+`;
   
 const fadeIn = keyframes `
   0% {
@@ -125,8 +133,12 @@ export const GlobalStyle = createGlobalStyle `
     margin: 15px 10px;
   }
 
-  button {
+  /* button {
       position: absolute;
       transform: scale(0);
+  } */
+
+  div {
+      background-color: #FAFAFA;
   }
 `;
