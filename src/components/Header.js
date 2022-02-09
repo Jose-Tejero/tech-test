@@ -5,8 +5,10 @@ const Header = () => {
 
     const Header = styled.div `
         margin: 0;
-        padding: 0;
+        padding: 40px 10px;
         background-color: #f174dc;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
     `,
     Paragraph = styled.p `
         color: #000;
@@ -20,6 +22,7 @@ const Header = () => {
     BigIcon = styled.i `
         color: #FFF;
         font-size: 80px;
+        text-align: center;
     `;
 
     return (
