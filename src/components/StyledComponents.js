@@ -1,90 +1,81 @@
-import React from 'react';
 import styled, {css, keyframes, ThemeProvider, createGlobalStyle} from 'styled-components';
+import adminImage from '../images/admin.jpg'
 
-const styledComponents = () => {
+export const FormBody = styled.div `
+background-color: #FAFAFA;
+display: grid;
+grid-template-columns: 1fr 4fr;
+padding: 40px 10px;
+`;
 
-    let mainColor = '#db7093',
-        mainAlphaColor80 = '#db709380';
+export const Form = styled.div `
+background-color: #F0F0F0;
+display: flex;
+flex-direction: column;
+text-align: left;
+margin: 0 7px;
+padding: 5px;
+`;
 
-    const setTransitionTime = time => `all ${time} ease-in-out`;
+export const FormBox = styled.form `
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 5px;
+gap: 10px;
+`;
 
-    const fadeIn = keyframes `
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    `;
+export const HeaderApp = styled.div `
+margin: 0;
+padding: 40px 10px;
+background-color: #F174DC;
+display: grid;
+grid-template-columns: 3fr 1fr;
+`;
 
-    const StyledH3 = styled.h3`
-        padding: 2rem;
-        text-align: center;
-        color: ${props => props.color || '#000'};
-        background-color: ${mainColor};
-        transition: ${setTransitionTime('0.5s')};
-        animation: ${fadeIn} 2s ease-out ;
+export const Paragraph = styled.p `
+color: #000;
+margin: 0;
+padding: 10px;
+`;
 
-        ${props => props.isButton && css`
-            margin: auto;
-            max-width: 50%;
-            border-radius: 0.25rem;
-            cursor: pointer;
-        `};
+export const FormTitle = styled.h3 `
+margin: 0;
+padding: 10px;
+`;
 
-        &:hover {
-            background-color: ${mainAlphaColor80};
-        }
-    `;
+export const BigIcon = styled.i `
+color: #FFF;
+font-size: 80px;
+text-align: center;
+`;
 
-    const light = {
-        color: '#222',
-        bgColor: '#DDD'
-    }
+export const AdminImage = styled.div `
+background-image: url(${adminImage});
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+border: 2px solid #FFF;
+border-radius: 25px;
+width: 50px;
+height: 70px;
+`;
 
-    const dark = {
-        color: '#DDD',
-        bgColor: '#222'
-    }
+export const Frame = styled.div `
+border: 2px solid #F174DC;
+border-radius: 27px;
+width: 54px;
+height: 74px;
+margin: 0 auto;
+position: relative;
+`;
 
-    const Box = styled.div`
-        padding: 1rem;
-        margin: 1rem;
-        text-align: center;
-        color: ${({theme}) => theme.color};
-        background-color: ${({theme}) => theme.bgColor};
-    `;
-
-    const BoxRounded = styled(Box)`
-        border-radius: 1rem;
-    `;
-
-    const GlobalStyle = createGlobalStyle`
-        h2 {
-            paddin: 2rem;
-            background-color: #FFF;
-            color: #61DAFB;
-            text-transform: uppercase;
-        }
-    `
-
-    return (
-        <div>
-            <GlobalStyle />
-            <h2>Styled-components</h2>
-            <StyledH3>Este es un componente estilizado</StyledH3>
-            <StyledH3 color='#61dafb'>Este es un componente estilizado</StyledH3>
-            <StyledH3 isButton>Soy un h3 estilizado como botón</StyledH3>
-            <ThemeProvider theme={light} >
-                <Box>Soy una caja light</Box>
-                <BoxRounded>Soy una caja redondeada light</BoxRounded>
-            </ThemeProvider>
-            <ThemeProvider theme={dark} >
-                <Box>Soy una caja dark</Box>
-                <BoxRounded>Soy una caja redondeada dark</BoxRounded>
-            </ThemeProvider>
-        </div>
-    );
-};
-
-export default styledComponents;
+export const Logo = styled.div `
+width: 20px;
+height: 20px;
+background-color: #F174DC;
+border-radius: 10px;
+position: absolute;
+bottom: -2.5px;
+right: -2.5px;
+`;
