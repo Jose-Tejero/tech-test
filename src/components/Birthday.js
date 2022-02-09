@@ -37,16 +37,16 @@ const Birthday = () => {
             <FormContainer>
                 <h3>¿Cuál es tu fecha de nacimiento?</h3>
                 <Form onSubmit={handleSubmit(submit)} >
-                    <select defaultValue={'Día'} required {...register('day')} >
-                        <option disabled={true} >Día</option>
+                    <select required {...register('day')} >
+                        <option value='' >Día</option>
                         {daysFor}
                     </select>
-                    <select defaultValue={'Mes'} required {...register('month')} >
-                        <option disabled={true} >Mes</option>
+                    <select required {...register('month')} >
+                        <option value='' >Mes</option>
                         {monthsMap}
                     </select>
-                    <select defaultValue={'Año'} required {...register('year')}>
-                        <option disabled={true} >Año</option>
+                    <select required {...register('year')}>
+                        <option value='' >Año</option>
                         {yearsFor}
                     </select>
                     <button>Enviar</button>
