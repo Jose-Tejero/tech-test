@@ -8,7 +8,7 @@ grid-template-columns: 1fr 4fr;
 padding: 40px 10px;
 `;
 
-export const Form = styled.div `
+export const FormContainer = styled.div `
 background-color: #F0F0F0;
 display: flex;
 flex-direction: column;
@@ -17,12 +17,13 @@ margin: 0 7px;
 padding: 5px;
 `;
 
-export const FormBox = styled.form `
+export const Form = styled.form `
 display: flex;
 flex-direction: column;
 justify-content: center;
 padding: 5px;
 gap: 10px;
+position: relative;
 `;
 
 export const HeaderApp = styled.div `
@@ -95,23 +96,37 @@ export const GlobalStyle = createGlobalStyle `
     animation: ${fadeIn} 0.5s ease-out ;
   }
 
-  input {
+  input, select {
     padding: 20px 10px;
     border: 3px solid #E0E0E0;
     background-color: #F0F0F0;
     font-size: 15px;
     border-radius: 5px;
+
+    &::placeholder {
+        color #000;
+    }
+
+    &:focus {
+        outline-color: #F174DC;
+    }
   }
 
-  input::placeholder {
-    color: #000;
-  }
+  select {
+      appearance: none;
 
-  input:focus {
-    outline-color: #F174DC;
+      &::-ms-expand {
+          width: 300px;
+          height: 200px;
+      }
   }
 
   h3 {
     margin: 15px 10px;
+  }
+
+  button {
+      position: absolute;
+      transform: scale(0);
   }
 `;

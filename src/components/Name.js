@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
 import AdminPhoto from './AdminPhoto';
-/* import { useDispatch } from 'react-redux';
-import { useForm } from 'react-hook-form'; */
-import { FormBody, Form, FormBox } from './StyledComponents';
+import { useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
+import { FormBody, Form, FormContainer } from './StyledComponents';
 
 const Name = () => {
 
-    /* const [ name, setName ] = useState('');
-    const [ secondName, setSecondName ] = useState('');
-    const [ lastname, setLastName ] = useState('');
-    const [ secondLastName, setSecondLastName ] = useState('');
     const dispatch = useDispatch();
-    const { register, handleSubmit, reset } = useForm(); */
+    const { register, handleSubmit, reset } = useForm();
 
-    /* const submit = userName => {
+    const submit = userName => {
         console.log(userName);
-
-        dispatch({type: 'SET_NAME', payload: name});
-    } */
+        dispatch({type: 'SET_NAME', payload: userName.name});
+        dispatch({type: 'SET_SECONDNAME', payload: userName.secondName});
+        dispatch({type: 'SET_LASTNAME', payload: userName.lastname});
+        dispatch({type: 'SET_SECONDLASTNAME', payload: userName.secondLastName});
+        reset();
+    }
 
     return (
         <FormBody>
             <AdminPhoto />
-            <Form>
+            <FormContainer>
                 <h3>¿Cuál es tu nombre?</h3>
-                <FormBox /* onSubmit={handleSubmit(submit)} */ >
-                    <input type="text" placeholder='Nombre' required/>
-                    <input type="text" placeholder='Segundo nombre' />
-                    <input type="text" placeholder='Apellido paterno'required/>
-                    <input type="text" placeholder='Apellido materno' />
-                </FormBox>
-            </Form>
+                <Form onSubmit={handleSubmit(submit)} >
+                    <input type="text" placeholder='Nombre' required {...register('name')}/>
+                    <input type="text" placeholder='Segundo nombre' {...register('secondName')}/>
+                    <input type="text" placeholder='Apellido paterno' required {...register('lastname')}/>
+                    <input type="text" placeholder='Apellido materno' {...register('secondLastName')}/>
+                    <button></button>
+                </Form>
+            </FormContainer>
         </FormBody>
     );
 };
