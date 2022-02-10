@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AdminPhoto from './AdminPhoto';
 import { FormBody, Form, FormContainer } from './StyledComponents';
 import { useDispatch } from 'react-redux';
@@ -8,6 +8,7 @@ const Birthday = () => {
 
     const dispatch = useDispatch();
     const { register, handleSubmit, reset } = useForm();
+    const [ isShowingForm, setIsShowingForm ] = useState(true);
 
     const submit = (userBirthday, e) => {
         e.preventDefault();
@@ -15,7 +16,9 @@ const Birthday = () => {
         dispatch({type: 'SET_DAY', payload: userBirthday.day});
         dispatch({type: 'SET_MONTH', payload: userBirthday.month});
         dispatch({type: 'SET_YEAR', payload: userBirthday.year});
+        dispatch({type: 'SET_PROGRESS', payload: 66.6});
         reset();
+        setIsShowingForm(false);
     }
 
     let daysFor = [];
@@ -36,21 +39,23 @@ const Birthday = () => {
             <AdminPhoto />
             <FormContainer>
                 <h3>¿Cuál es tu fecha de nacimiento?</h3>
-                <Form onSubmit={handleSubmit(submit)} >
-                    <select required {...register('day')} >
-                        <option value='' >Día</option>
-                        {daysFor}
-                    </select>
-                    <select required {...register('month')} >
-                        <option value='' >Mes</option>
-                        {monthsMap}
-                    </select>
-                    <select required {...register('year')}>
-                        <option value='' >Año</option>
-                        {yearsFor}
-                    </select>
-                    <button>Enviar</button>
-                </Form>
+                { isShowingForm && (
+                    <Form onSubmit={handleSubmit(submit)} >
+                        <select required {...register('day')} >
+                            <option value='' >Día</option>
+                            {daysFor}
+                        </select>
+                        <select required {...register('month')} >
+                            <option value='' >Mes</option>
+                            {monthsMap}
+                        </select>
+                        <select required {...register('year')}>
+                            <option value='' >Año</option>
+                            {yearsFor}
+                        </select>
+                        <button>Enviar</button>
+                    </Form>
+                )}
             </FormContainer>
         </FormBody>
     );

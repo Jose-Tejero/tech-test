@@ -9,6 +9,7 @@ const INITIAL_STATE = {
     year: 0,
     email: '',
     tel: 0,
+    progress: 0
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -72,6 +73,12 @@ const reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 tel: action.payload
+            }
+
+        case 'SET_PROGRESS':
+            return {
+                ...state,
+                progress: action.payload
             }
 
         default:

@@ -1,10 +1,9 @@
-import './App.css';
 import Birthday from './components/Birthday';
 import Header from './components/Header';
 import Name from './components/Name';
 import Contact from './components/Contact';
 import { useDispatch, useSelector } from 'react-redux';
-import { Datas, MainDatas } from './components/StyledComponents';
+import { Datas, MainDatas, AppComponent, ChatContainer } from './components/StyledComponents';
 import Validation from './components/Validation';
 
 function App() {
@@ -23,63 +22,65 @@ function App() {
   const dispatch = useDispatch();
     
   return (
-    <div>
+    <AppComponent>
       <Header />
-      <Name />
-      {
-        userName ? (
-          <>
-            <Datas><p>{userName} {userSecondName} {userLastname} {userSecondLastname}</p></Datas>
-            <Birthday />
-          </>
-        ) : null
-      }
-      {
-        userYear ? (
-          <>
-            <Datas><p>{userDay} {userMonth} {userYear}</p></Datas>
-            <Contact />
-          </>
-        ) : null
-      }
-      {
-        userTel ? (
-          <>
-            <Datas>
+      <ChatContainer>
+        <Name />
+        {
+          userName ? (
+            <>
+              <Datas><p>{userName} {userSecondName} {userLastname} {userSecondLastname}</p></Datas>
+              <Birthday />
+            </>
+          ) : null
+        }
+        {
+          userYear ? (
+            <>
+              <Datas><p>{userDay} {userMonth} {userYear}</p></Datas>
+              <Contact />
+            </>
+          ) : null
+        }
+        {
+          userTel ? (
+            <>
+              <Datas>
+                <p>Correo electrónico: {userEmail}</p>
+                <p>Teléfono celular: {userTel}</p>
+              </Datas>
+              <Validation />
+              <button onClick={() => {
+                sessionStorage.name = `${userName}`;
+                sessionStorage.secondName = `${userSecondName}`;
+                sessionStorage.lastname = `${userLastname}`;
+                sessionStorage.day = `${userDay}`;
+                sessionStorage.month = `${userMonth}`;
+                sessionStorage.year = `${userYear}`;
+                sessionStorage.email = `${userEmail}`;
+                sessionStorage.tel = `${userTel}`;
+
+                dispatch({type: 'SET_COMPLETE', payload: true});
+
+              }}>
+                Iniciar
+              </button>
+
+            </>
+          ) : null
+        }
+        {
+          dataComplete ? (
+            <MainDatas>
+              <p>Fecha de nacimiento: {userDay} {userMonth} {userYear}.</p>
               <p>Correo electrónico: {userEmail}</p>
               <p>Teléfono celular: {userTel}</p>
-            </Datas>
-            <Validation />
-            <button onClick={() => {
-              sessionStorage.name = `${userName}`;
-              sessionStorage.secondName = `${userSecondName}`;
-              sessionStorage.lastname = `${userLastname}`;
-              sessionStorage.day = `${userDay}`;
-              sessionStorage.month = `${userMonth}`;
-              sessionStorage.year = `${userYear}`;
-              sessionStorage.email = `${userEmail}`;
-              sessionStorage.tel = `${userTel}`;
-
-              dispatch({type: 'SET_COMPLETE', payload: true});
-
-            }}>
-              Iniciar
-            </button>
-
-          </>
-        ) : null
-      }
-      {
-        dataComplete ? (
-          <MainDatas>
-            <p>Fecha de nacimiento: {userDay} {userMonth} {userYear}.</p>
-            <p>Correo electrónico: {userEmail}</p>
-            <p>Teléfono celular: {userTel}</p>
-            <p>Nombre: {userName} {userSecondName} {userLastname} {userSecondLastname}</p>
-          </MainDatas>
-        ) : null
-      }
-    </div>
+              <p>Nombre: {userName} {userSecondName} {userLastname} {userSecondLastname}</p>
+            </MainDatas>
+          ) : null
+        }
+      </ChatContainer>
+    </AppComponent>
   );
 }
 
