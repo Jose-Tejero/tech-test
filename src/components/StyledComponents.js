@@ -201,6 +201,9 @@ export const GlobalStyle = createGlobalStyle `
   }
 
   button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100px;
       height: 50px;
       margin: 0 auto;
