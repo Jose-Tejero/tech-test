@@ -144,6 +144,15 @@ export const ProgressBarPink = styled.div `
     z-index: 30;
     transition: 0.5s ease-out;
 `;
+
+export const LastButton = styled.button `
+    background-color: #ee4183;
+    max-width: 400px;
+    width: 100%;
+    color: #FAFAFA;
+    font-weight: 900;
+    margin: 20px auto;
+`;
   
 const fadeIn = keyframes `
   0% {

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Name from './components/Name';
 import Contact from './components/Contact';
 import { useDispatch, useSelector } from 'react-redux';
-import { Datas, MainDatas, AppComponent, ChatContainer } from './components/StyledComponents';
+import { Datas, MainDatas, AppComponent, ChatContainer, LastButton } from './components/StyledComponents';
 import Validation from './components/Validation';
 
 function App() {
@@ -50,7 +50,7 @@ function App() {
                 <p>Teléfono celular: {userTel}</p>
               </Datas>
               <Validation />
-              <button onClick={() => {
+              <LastButton onClick={() => {
                 sessionStorage.name = `${userName}`;
                 sessionStorage.secondName = `${userSecondName}`;
                 sessionStorage.lastname = `${userLastname}`;
@@ -64,7 +64,7 @@ function App() {
 
               }}>
                 Iniciar
-              </button>
+              </LastButton>
 
             </>
           ) : null
