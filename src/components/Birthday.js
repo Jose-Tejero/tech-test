@@ -12,7 +12,6 @@ const Birthday = () => {
 
     const submit = (userBirthday, e) => {
         e.preventDefault();
-        console.log(userBirthday);
         dispatch({type: 'SET_DAY', payload: userBirthday.day});
         dispatch({type: 'SET_MONTH', payload: userBirthday.month});
         dispatch({type: 'SET_YEAR', payload: userBirthday.year});

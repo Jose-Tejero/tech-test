@@ -12,7 +12,6 @@ const Name = () => {
 
     const submit = (userName, e) => {
         e.preventDefault();
-        console.log(userName);
         dispatch({type: 'SET_NAME', payload: userName.name});
         dispatch({type: 'SET_SECONDNAME', payload: userName.secondName});
         dispatch({type: 'SET_LASTNAME', payload: userName.lastname});

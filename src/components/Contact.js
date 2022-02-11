@@ -11,7 +11,6 @@ const Contact = () => {
     const [ isShowingForm, setIsShowingForm ] = useState(true);
 
     const submit = userContact => {
-        console.log(userContact);
         dispatch({type: 'SET_EMAIL', payload: userContact.email});
         dispatch({type: 'SET_TEL', payload: userContact.tel});
         dispatch({type: 'SET_PROGRESS', payload: 100});
