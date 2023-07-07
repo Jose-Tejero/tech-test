@@ -1,11 +1,11 @@
-import styled, {keyframes, createGlobalStyle} from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import adminImage from '../images/admin.jpg'
 
-export const AppComponent = styled.div `
+export const AppComponent = styled.div`
     scroll-behavior: smooth;
 `;
 
-export const FormBody = styled.div `
+export const FormBody = styled.div`
     background-color: #FAFAFA;
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -13,12 +13,12 @@ export const FormBody = styled.div `
     scroll-behavior: smooth;
 `;
 
-export const ChatContainer = styled.div `
+export const ChatContainer = styled.div`
     max-width: 450px;
     margin: 200px auto 0 auto;
 `;
 
-export const FormContainer = styled.div `
+export const FormContainer = styled.div`
     background-color: #F0F0F0;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@ export const FormContainer = styled.div `
     padding: 5px;
 `;
 
-export const Form = styled.form `
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +36,7 @@ export const Form = styled.form `
     position: relative;
 `;
 
-export const HeaderApp = styled.div `
+export const HeaderApp = styled.div`
     max-width: 450px;
     margin: auto;
     width: 100%;
@@ -51,24 +51,24 @@ export const HeaderApp = styled.div `
     z-index: 10;
 `;
 
-export const Paragraph = styled.p `
+export const Paragraph = styled.p`
     color: #000;
     margin: 0;
     padding: 10px;
 `;
 
-export const FormTitle = styled.h3 `
+export const FormTitle = styled.h3`
     margin: 0;
     padding: 10px;
 `;
 
-export const BigIcon = styled.i `
+export const BigIcon = styled.i`
     color: #FFF;
     font-size: 80px;
     text-align: center;
 `;
 
-export const AdminImage = styled.div `
+export const AdminImage = styled.div`
     background-image: url(${adminImage});
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@ export const AdminImage = styled.div `
     height: 70px;
 `;
 
-export const Frame = styled.div `
+export const Frame = styled.div`
     border: 2px solid #F174DC;
     border-radius: 27px;
     width: 54px;
@@ -88,7 +88,7 @@ export const Frame = styled.div `
     position: relative;
 `;
 
-export const Logo = styled.div `
+export const Logo = styled.div`
     width: 20px;
     height: 20px;
     background-color: #F174DC;
@@ -98,7 +98,7 @@ export const Logo = styled.div `
     right: -2.5px;
 `;
 
-export const Datas = styled.div `
+export const Datas = styled.div`
     background-color: #F174DC;
     width: 300px;
     padding: 10px 10px;
@@ -106,7 +106,7 @@ export const Datas = styled.div `
     border-radius: 10px
 `;
 
-export const UserValidation = styled.div `
+export const UserValidation = styled.div`
     background-color: #F0F0F0;
     width: 250px;
     padding: 20px 10px;
@@ -116,7 +116,7 @@ export const UserValidation = styled.div `
     margin-bottom: 20px;
 `;
 
-export const MainDatas = styled.div `
+export const MainDatas = styled.div`
     background-color: #F174DC;
     width: 300px;
     padding: 10px 20px;
@@ -124,7 +124,7 @@ export const MainDatas = styled.div `
     border-radius: 10px;
 `;
 
-export const ProgressBarGray = styled.div `
+export const ProgressBarGray = styled.div`
     max-width: 470px;
     width: 100%;
     height: 10px;
@@ -133,7 +133,7 @@ export const ProgressBarGray = styled.div `
     top: 199px;
 `;
 
-export const ProgressBarPink = styled.div `
+export const ProgressBarPink = styled.div`
 
     max-width: 470px;
     width: ${props => props.progressUpgrade}%;
@@ -145,7 +145,7 @@ export const ProgressBarPink = styled.div `
     transition: 0.5s ease-out;
 `;
 
-export const LastButton = styled.button `
+export const LastButton = styled.button`
     background-color: #ee4183;
     max-width: 400px;
     width: 100%;
@@ -153,8 +153,8 @@ export const LastButton = styled.button `
     font-weight: 900;
     margin: 20px auto;
 `;
-  
-const fadeIn = keyframes `
+
+const fadeIn = keyframes`
   0% {
       opacity: 0;
   }
@@ -163,7 +163,7 @@ const fadeIn = keyframes `
   }
 `;
 
-export const GlobalStyle = createGlobalStyle `
+export const GlobalStyle = createGlobalStyle`
 
   * {
     animation: ${fadeIn} 0.5s ease-out ;

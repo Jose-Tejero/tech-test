@@ -3,14 +3,14 @@ import { Frame, AdminImage, Logo } from './StyledComponents';
 
 const AdminPhoto = () => {
 
-    return (
-        <>
-            <Frame>
-                <AdminImage></AdminImage>
-                <Logo></Logo>
-            </Frame>
-        </>
-    );
+  return (
+    <>
+      <Frame>
+        <AdminImage></AdminImage>
+        <Logo></Logo>
+      </Frame>
+    </>
+  );
 };
 
 export default AdminPhoto;
